@@ -1,0 +1,24 @@
+section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+section .linha {
+  margin: 15px;
+  padding: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+section .linha span {
+  width: 150px;
+}
+section .linha .ranger {
+  width: 250px;
+}
+section .linha input {
+  margin: 0 15px;
+}
+section .linha .campo {
+  width: 50px;
+  font-size: 18px;
+}
