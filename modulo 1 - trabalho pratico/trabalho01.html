@@ -10,45 +10,23 @@
     <section>
       <div class="linha">
         <span>(R) Vermelho:</span>
-        <input
-          type="range"
-          min="0"
-          step="1"
-          max="255"
-          name="rangerRed"
-          value="0"
-          class="ranger"
-        />
-        <input type="text" name="textRed" value="0" class="campo" disabled />
+        <input id="red" type="range" min="0" step="1" max="255" name="rangerRed" value="0" class="ranger" />
+        <input type="text" id="textRed" name="textRed" value="0" class="campo" disabled/>
       </div>
 
       <div class="linha">
         <span>(G) Verde:</span>
-        <input
-          type="range"
-          min="0"
-          step="1"
-          max="255"
-          name="rangerGreen"
-          value="0"
-          class="ranger"
-        />
-        <input type="text" name="textGreen" value="0" class="campo" disabled />
+        <input id="green" type="range" min="0" step="1" max="255" name="rangerGreen" value="0" class="ranger" />
+        <input type="text" id="textGreen" name="textGreen" value="0" class="campo" disabled />
       </div>
 
       <div class="linha">
         <span>(B) Azul:</span>
-        <input
-          type="range"
-          min="0"
-          step="1"
-          max="255"
-          name="rangerBlue"
-          value="0"
-          class="ranger"
-        />
-        <input type="text" name="textBlue" value="0" class="campo" disabled />
+        <input id="blue" type="range" min="0" step="1" max="255" name="rangerBlue" value="0" class="ranger" />
+        <input type="text" id="textBlue" name="textBlue" value="0" class="campo" disabled />
       </div>
+
+      <div class="color"></div>
     </section>
 
     <script src="script.js"></script>
