@@ -1,5 +1,6 @@
 // Só executa o código quando a página for carregada totalmente.
 let red, green, blue = 0;
+
 window.addEventListener('load', start);
 
 function start() {
