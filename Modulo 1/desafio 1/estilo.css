@@ -23,15 +23,38 @@
 }
 #conteudo .filtros {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #conteudo .usuarios, #conteudo .estatisticas {
   width: 50%;
   border: 1px solid #e9e9e9;
 }
+#conteudo .usuarios #msgUsuarios, #conteudo .estatisticas #msgEstatisticas {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 15px 0;
+  text-align: center;
+}
 #conteudo .usuarios span, #conteudo .estatisticas span {
   display: block;
-  text-align: center;
   line-height: 30px;
+}
+#ulDados,  #ulEstatisticas{
+  padding: 0 30px;
+  list-style-type: none;
+}
+#conteudo .filtros .usuarios #ulDados li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+#conteudo .filtros .usuarios #ulDados li span {
+  width: 130px;
+  margin: 0 15px;
+  text-align: left;
+}
+#conteudo .filtros .usuarios #ulDados li .img {
+  border-radius: 50%;
+}
+#conteudo .filtros .estatisticas #ulEstatisticas li {
+  text-align: left;
 }
