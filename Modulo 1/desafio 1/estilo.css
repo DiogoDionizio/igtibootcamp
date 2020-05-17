@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 60px;
+}
+#conteudo h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#conteudo #buscar {
+  width: 95%;
+  padding: 10px 2.5%;
+  border-bottom: 1px solid #000;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+#conteudo .filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#conteudo .usuarios, #conteudo .estatisticas {
+  width: 50%;
+  border: 1px solid #e9e9e9;
+}
+#conteudo .usuarios span, #conteudo .estatisticas span {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}

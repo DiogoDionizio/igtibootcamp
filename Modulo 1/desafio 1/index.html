@@ -7,18 +7,25 @@
   <title>CRUD</title>
 </head>
 <body>
-  <h1>Cadastro de nomes</h1>
-  <form action="">
-    <input type="text" name="campo" id="inputName">
-  </form>
-  
+  <section id="conteudo">
+    <h1>Pesquisa de usuários</h1>
 
-  <h2>Nomes cadastrados até o momento</h2>
-  <ul id="lista">
+    <input type="text" name="buscar" id="buscar" placeholder="Buscar">
 
-  </ul>
+    <div class="filtros">
+      <div class="usuarios">
+        <span>Nenhum usuário filtrado.</span>
+      </div>
+
+      <div class="estatisticas">
+        <span>Nada a ser exibido.</span>        
+      </div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
   <script src="people.js"></script>
   <script src="array.js"></script>
+  <script src="jsonURL.js"></script>
 </body>
 </html>
