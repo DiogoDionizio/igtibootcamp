@@ -24,8 +24,6 @@ window.addEventListener('load', function() {
   inputBuscar.focus();
 });
 
-// Render para exibir as informações na tela.
-
 // Pega tudo que é digitado no input e pesquisa
 function digitarInput(event){
   var dados = filtrarNome(dadosFiltrados, event.target.value);

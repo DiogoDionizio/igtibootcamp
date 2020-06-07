@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Prático do Módulo 1</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <section>
+      <div class="linha">
+        <span>(R) Vermelho:</span>
+        <input id="red" type="range" min="0" step="1" max="255" name="rangerRed" value="0" class="ranger" />
+        <input type="text" id="textRed" name="textRed" value="0" class="campo" disabled/>
+      </div>
+
+      <div class="linha">
+        <span>(G) Verde:</span>
+        <input id="green" type="range" min="0" step="1" max="255" name="rangerGreen" value="0" class="ranger" />
+        <input type="text" id="textGreen" name="textGreen" value="0" class="campo" disabled />
+      </div>
+
+      <div class="linha">
+        <span>(B) Azul:</span>
+        <input id="blue" type="range" min="0" step="1" max="255" name="rangerBlue" value="0" class="ranger" />
+        <input type="text" id="textBlue" name="textBlue" value="0" class="campo" disabled />
+      </div>
+
+      <div class="color"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

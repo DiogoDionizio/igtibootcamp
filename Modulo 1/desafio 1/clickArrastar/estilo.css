@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+section #naoPagos, section #pagos {
+  width: 50%;
+}
+ul {
+  list-style-type: none;
+  margin: 0 10%;
+}
+li {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  margin: 10px 0;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, .1);
+  border: 1px solid #e9e9e9;
+}
