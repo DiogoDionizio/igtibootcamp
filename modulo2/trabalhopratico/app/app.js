@@ -14,7 +14,7 @@ global.dataCidades = [];
 
 
 
-// Const do app inicia o framwork
+// Const do app inicia o framework
 var app = express();
 
 let accountsRouter = require('../routes/accounts.js'); // importando o modulo account

@@ -3,12 +3,12 @@ let router = express.Router();
 
 let fs = require('fs');
 
-router.get('/', (res, req) => {
-  req.status(200).send(dataEstados);
+router.get('/', (req, res) => {
+  res.status(200).send(dataEstados);
 });
 
 // UF dos cinco estados que mais possuem cidades, seguidos da quantidade, em ordem decrescente.
-router.get('/max', (res, req) => {
+router.get('/max', (req, res) => {
 
   // Vetor que armazena todos os estados e quantidade de cidades.
   let EstadoQtdCidades = [];
@@ -39,12 +39,12 @@ router.get('/max', (res, req) => {
 
 
   console.log(statusEstado);
-  req.status(200).send(statusEstado);
+  res.status(200).send(statusEstado);
 
 });
 
 // UF dos cinco estados que mais possuem cidades, seguidos da quantidade.
-router.get('/min', (res, req) => {
+router.get('/min', (req, res) => {
 
   // Vetor que armazena todos os estados e quantidade de cidades.
   let EstadoQtdCidades = [];
@@ -78,12 +78,12 @@ router.get('/min', (res, req) => {
   });
 
   console.log(statusEstado);
-  req.status(200).send(statusEstado);
+  res.status(200).send(statusEstado);
 
 });
 
 // Array com a cidade de maior nome de cada estado, seguida de seu UF
-router.get('/maior', (res, req) => {
+router.get('/maior', (req, res) => {
   let estadoNomeCidades = [];
 
   for (let index = 0; index < dataEstados[0].length; index++) {
@@ -111,12 +111,12 @@ router.get('/maior', (res, req) => {
   }
 
   console.log(estadoNomeCidades);
-  req.status(200).send(estadoNomeCidades);
+  res.status(200).send(estadoNomeCidades);
 
 });
 
 // Array com a cidade de menor nome de cada estado, seguida de seu UF
-router.get('/menor', (res, req) => {
+router.get('/menor', (req, res) => {
   let estadoNomeCidades = [];
 
   for (let index = 0; index < dataEstados[0].length; index++) {
@@ -144,12 +144,12 @@ router.get('/menor', (res, req) => {
   }
 
   console.log(estadoNomeCidades);
-  req.status(200).send(estadoNomeCidades);
+  res.status(200).send(estadoNomeCidades);
 
 });
 
 // cidade de maior nome entre todos os estados, seguido do seu UF
-router.get('/maiorEstado', (res, req) => {
+router.get('/maiorEstado', (req, res) => {
   let estadoNomeCidades = [];
 
   for (let index = 0; index < dataEstados[0].length; index++) {
@@ -181,12 +181,12 @@ router.get('/maiorEstado', (res, req) => {
   }
 
   console.log(estadoNomeCidades);
-  req.status(200).send(estadoNomeCidades);
+  res.status(200).send(estadoNomeCidades);
 
 });
 
 //  cidade de menor nome entre todos os estados, seguido do seu UF
-router.get('/menorEstado', (res, req) => {
+router.get('/menorEstado', (req, res) => {
   let estadoNomeCidades = [];
 
   for (let index = 0; index < dataEstados[0].length; index++) {
@@ -218,12 +218,12 @@ router.get('/menorEstado', (res, req) => {
   }
 
   console.log(estadoNomeCidades);
-  req.status(200).send(estadoNomeCidades);
+  res.status(200).send(estadoNomeCidades);
 
 });
 
 // Retorna a quantidade de cidades daquele estado.
-router.get('/:uf', (res, req) => {
+router.get('/:uf', (req, res) => {
   // Encontra um estado especificado pela URI
   let estado = dataEstados[0].find(estado => estado.Sigla.toLowerCase() == res.params.uf);
 
@@ -233,7 +233,7 @@ router.get('/:uf', (res, req) => {
   });
 
   console.log('Estado: '+estado.Sigla+' Quantidade de cidades: '+ qtdCidades.length);
-  req.status(200).send({estado: estado.Sigla, quantidadeCidades: qtdCidades.length});
+  res.status(200).send({estado: estado.Sigla, quantidadeCidades: qtdCidades.length});
   
 });
 
