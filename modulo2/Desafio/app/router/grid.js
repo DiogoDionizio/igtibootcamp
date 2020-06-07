@@ -12,17 +12,59 @@ router.get('/', (req, res) => {
 });
 
 // Nota total de aluno por disciplina
-router.get('/nota', (req, res) =>{
-  let data = req.body;
+router.get('/nota/:student/:subject', (req, res) =>{
+  let data = req.params;
 
-  console.log(data);
+  let student = dataGrid[0].grades.filter(grid => grid.student == data.student && grid.subject == data.subject);
+  const sumSubject = student.reduce((acc, cur) =>{
+    return acc + cur.value;
+  }, 0);
+  res.status(200).send({student: data.student, subject: data.subject, soma: sumSubject});
+});
+
+// Média das grades de determinado subject e type
+router.get('/media/:subject/:type', (req, res) => {
+  let data = req.params;
+
+  const gridSubject = dataGrid[0].grades.filter(grid => grid.subject == data.subject && grid.type == data.type);
+  const somaSubject = gridSubject.reduce((acc, cur) => {
+    return acc + cur.value;
+  }, 0);
+
+  console.log('Quantidade: ' + gridSubject.length);
+  console.log('Soma: ' + somaSubject);
+
+  res.status(200).send({subject: data.subject, type: data.type, media: (somaSubject / gridSubject.length)});
+});
+
+// Retornar as três melhores grades de acordo com determinado subject e type
+router.get('/melhores/:subject/:type', (req, res) => {
+  let data = req.params;
+
+  // Filtra as melhores notas
+  const melhoresNotas = dataGrid[0].grades.filter(grid => grid.subject == data.subject && grid.type == data.type);
+  
+  // Ordena as melhores notas
+  melhoresNotas.sort((a, b) => {
+    return b.value - a.value;
+  });
+
+  console.log(melhoresNotas);
+
+  // Lista apenas os 3 primeiros
+  let tresMelhorNotas = melhoresNotas.filter((notas, i) => {
+    if (i < 3) {
+      return true;
+    }
+  });
+
+  res.status(200).send(tresMelhorNotas);
 });
 
 // Adiciona uma grade ao arquivos grades.json
 router.post('/', (req, res) => {
 
   try {
-    
     let data = req.body;
 
     // Pegar a data e hora para fazer o timestamp
